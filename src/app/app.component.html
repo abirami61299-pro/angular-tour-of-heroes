@@ -21,20 +21,30 @@
       ></iframe> -->
     </main>
   </mat-sidenav-content>
+  <div class="header">
+    <h1 class="title">deskbird</h1>
+    <div class="toggle" (click)="sidenav.toggle()">
+      <mat-icon>chevron_left</mat-icon>
+    </div>
+  </div>
   <mat-sidenav #sidenav opened mode="side" position="end">
     <div class="instruction">
-      <button>
-        <mat-icon (click)="sidenav.toggle()">Instruction</mat-icon>
-      </button>
-      <div>
-        <div>Its me.Hi I am the problem .its me</div>
-      </div>
-      <div class="btn">
-        <button (click)="goBack()">Back</button>
+      <header>
+        <img (click)="sidenav.toggle()" src="./../assets/icons/close.svg" />
 
-        <button (click)="goToAdmin()">Go To Admin</button>
+        <h2>Instruction</h2>
+      </header>
+      <div class="content">
+        <div>
+          <div>Its me.Hi I am the problem .its me</div>
+        </div>
+        <div class="btn">
+          <button mat-button (click)="goBack()">Back</button>
 
-        <button (click)="onnext()">Next</button>
+          <button mat-button (click)="goToAdmin()">Go To Admin</button>
+
+          <button mat-button (click)="onnext()">Next</button>
+        </div>
       </div>
     </div>
   </mat-sidenav>

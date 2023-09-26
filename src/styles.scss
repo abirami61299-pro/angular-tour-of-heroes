@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 iframe {
-  height: 96.2vh;
+  height: 99vh;
   width: 100%;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 mat-sidenav {
   width: 25%;
+}
+::-webkit-scrollbar {
+  display: none;
 }

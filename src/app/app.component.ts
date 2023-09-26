@@ -16,10 +16,10 @@ export class AppComponent implements OnInit {
   }
   async embedNewProject() {
     this.vm = await sdk.embedGithubProject('myDiv', this.githubProjectName, {
-      openFile: 'package.json:L1-L10',
+      openFile: 'src/environments/environment.ts:L13-L17',
       view: 'editor',
       forceEmbedLayout: true,
-      showSidebar: true,
+      // showSidebar: true,
     });
   }
   async onnext() {
@@ -30,8 +30,12 @@ export class AppComponent implements OnInit {
 
     this.isOpen = '1';
 
-    await this.vm.editor.setCurrentFile('src/app/app.component.scss');
-    await this.vm.editor.openFile(['src/app/app.component.html:L1-L10']);
+    await this.vm.editor.setCurrentFile(
+      'src/app/Pages/rating/rating.component.ts'
+    );
+    await this.vm.editor.openFile([
+      'src/app/Pages/rating/rating.component.ts:L1-L10',
+    ]);
   }
 
   goToAdmin() {
@@ -47,6 +51,8 @@ export class AppComponent implements OnInit {
     this.isOpen = '1';
 
     await this.vm.editor.setCurrentFile('package.json');
-    await this.vm.editor.openFile(['package.json:L1-L10']);
+    await this.vm.editor.openFile([
+      'src/app/Pages/rating/rating.component.ts:L1-L10',
+    ]);
   }
 }

@@ -2,12 +2,6 @@
   width: 100%;
 }
 
-.container {
-  display: flex;
-  .instruction {
-    width: 25%;
-  }
-}
 mat-sidenav-container,
 mat-sidenav-content,
 mat-sidenav {
@@ -21,13 +15,35 @@ mat-sidenav-content {
   }
 }
 mat-sidenav {
-  width: 450px;
-  background-color: #f4f4f4;
+  width: 30%;
+  background-color: #3b4558;
   .instruction {
-    .btn {
-      position: absolute;
-      bottom: 1em;
-      right: 1em;
+    color: white;
+
+    header {
+      background-color: #313d53;
+      padding: 0.5em;
+      display: flex;
+      gap: 1em;
+      img {
+        content: url("../assets/icons/close.svg");
+        cursor: pointer;
+      }
+    }
+    .content {
+      padding: 0.5em;
+      font-size: x-large;
+      .btn {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        display: flex;
+        gap: 1em;
+        button {
+          background-color: blueviolet;
+          color: white;
+        }
+      }
     }
   }
 }
