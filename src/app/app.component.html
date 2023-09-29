@@ -1,24 +1,16 @@
-<!-- <div id="myDiv"></div> -->
-<!-- <div class="container"></div> -->
-<!-- <mat-icon (click)="sidenav.toggle()">Instruction</mat-icon> -->
-
 <mat-sidenav-container>
   <mat-sidenav-content>
     <main>
-      <div [ngClass]="{ hidden: isOpen !== '1' }">
+      <div
+        [ngClass]="{ hidden: !(tab === panel.First || tab === panel.Third) }"
+      >
         <div id="myDiv"></div>
       </div>
-      <div [ngClass]="{ hidden: isOpen !== '2' }">
+      <div [ngClass]="{ hidden: !(tab === panel.Second) }">
         <iframe
           src="https://stageadmingamify.theproindia.com/sandbox/projects/6412e6d18803bdfca9715bd0/Bus%20Booking%20SandBox/applications/6512c6c11b266012c5047aa1/Sandbox%20Application_SandBox%202078354897/configure-rewards/0"
         ></iframe>
       </div>
-      <!-- <iframe
-        src="https://stackblitz.com/github/abirami61299-pro/angular-tour-of-heroes?embed=1&amp;file=package.json%3AL1-L10&amp;view=editor"
-        id="myDiv"
-        height="300"
-        style="width: 100%; height: 97.45vh"
-      ></iframe> -->
     </main>
   </mat-sidenav-content>
   <div class="header">
@@ -34,16 +26,22 @@
 
         <h2>Instruction</h2>
       </header>
-      <div class="content">
-        <div>
-          <div>Its me.Hi I am the problem .its me</div>
-        </div>
-        <div class="btn">
-          <button mat-button (click)="goBack()">Back</button>
-
-          <button mat-button (click)="goToAdmin()">Go To Admin</button>
-
-          <button mat-button (click)="onnext()">Next</button>
+      <div>
+        <div class="content">
+          <div [ngSwitch]="tab">
+            <first-workflow
+              *ngSwitchCase="panel.First"
+              (onNext)="onnext($event)"
+            ></first-workflow>
+            <second-workflow
+              *ngSwitchCase="panel.Second"
+              (onNext)="onnext($event)"
+            ></second-workflow>
+            <third-workflow
+              *ngSwitchCase="panel.Third"
+              (onNext)="onnext($event)"
+            ></third-workflow>
+          </div>
         </div>
       </div>
     </div>

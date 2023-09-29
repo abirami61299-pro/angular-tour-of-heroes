@@ -1,0 +1,30 @@
+<div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>1. Create Game Action </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <img src="../../../../assets/game-action-creation.png" />
+        <div class="content">
+          Create a new Game Action-refer the above screen shots
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>2. Copy the Game Action </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <img src="../../../../assets/copy-action.png" />
+        <div class="content">
+          copy the newly created Game Action Action-refer the above screen shots
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div class="btn">
+    <button class="back" mat-button (click)="onnext(1)">Back</button>
+    <button class="next" mat-button (click)="onnext(3)">Next</button>
+  </div>
+</div>

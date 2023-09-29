@@ -1,0 +1,67 @@
+<div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>1. Copy the code snippet </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="content">
+        Copy the Below code snippet and paste in the highlighted lines
+      </div>
+      <div class="copy-code">
+        <div #container class="cpy-btn">
+          <button
+            ngxClipboard
+            [cbContent]="content | json"
+            [container]="container"
+          >
+            <img src="./../../../../assets/copy.png" alt="copy" />
+          </button>
+        </div>
+        <div class="code-snippet">
+          <code>
+            <pre>{{ content | json }} </pre>
+          </code>
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>2. Go To Preview </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="scrn-shots">
+        <img src="../../../../assets/code-editor.png" />
+        <div class="content">
+          At the Bottom of the code editor , Preview Button is there
+        </div>
+        <img src="../../../../assets/preview.png" />
+        <div class="content">
+          click the preview to check out the leaderboard
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>3. Check Out The LeaderBoard </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="scrn-shots">
+        <img src="../../../../assets/busbook-app.png" />
+        <div class="content">
+          At the Bottom of the code editor , Preview Button is there
+        </div>
+        <img src="../../../../assets/leaderboard-menu.png" />
+        <div class="content">
+          click the preview to check out the leaderboard
+        </div>
+        <img src="../../../../assets/leaderboard.png" />
+        <div class="content">
+          click the preview to check out the leaderboard
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div class="btn">
+    <button mat-button (click)="onnext()">Next</button>
+  </div>
+</div>

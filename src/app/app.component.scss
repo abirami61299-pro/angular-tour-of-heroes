@@ -31,19 +31,36 @@ mat-sidenav {
       }
     }
     .content {
-      padding: 0.5em;
       font-size: x-large;
-      .btn {
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-        display: flex;
-        gap: 1em;
-        button {
-          background-color: blueviolet;
-          color: white;
-        }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .btn {
+      background-color: #313d53;
+      width: 100%;
+      position: fixed;
+      bottom: 0em;
+      padding: 0.7em;
+
+      padding-left: 25%;
+      margin: 0;
+      button {
+        background-color: blueviolet;
+        color: white;
+        border-radius: 0.7em;
       }
     }
   }
+  &:not(.mat-drawer-opened) {
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    min-width: 100px;
+    overflow: hidden;
+  }
+}
+.mat-sidenav-transition .mat-sidenav {
+  /* custom animation to grow and shrink width */
+  -webkit-transition: width 0.3s !important; /* For Safari 3.1 to 6.0 */
+  transition: width 0.3s !important;
 }
