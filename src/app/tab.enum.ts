@@ -1,5 +1,5 @@
-export enum Tab {
-  First = 1,
-  Second = 2,
-  Third = 3,
+export enum VIEW {
+  EDITOR = 1,
+  PREVIEW = 2,
+  ADMINPANEL = 3,
 }

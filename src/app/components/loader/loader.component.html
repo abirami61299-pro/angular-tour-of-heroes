@@ -1,0 +1,30 @@
+<section>
+  <ul class="list-container" [@listAnimation]="items?.length">
+    <li *ngFor="let item of items; let i = index" class="list-item">
+      <svg
+        class="checkmark"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 52 52"
+      >
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+        <path
+          class="checkmark__check"
+          fill="none"
+          d="M14.1 27.2l7.1 7.2 16.7-16.8"
+        />
+      </svg>
+      <span>{{ item }} ...</span>
+    </li>
+  </ul>
+
+  <div id="loader">
+    <div class="preloader loading">
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+      <span class="slice"></span>
+    </div>
+  </div>
+</section>

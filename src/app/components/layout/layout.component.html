@@ -1,0 +1,83 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <main>
+      <header class="tabs">
+        <button
+          class="tab-btn tab-btn-active"
+          [ngClass]="{ 'tab-btn-active': tabView == view.EDITOR }"
+          (click)="embedNewProjectWithEditor()"
+        >
+          Editor
+        </button>
+        <button
+          class="tab-btn"
+          [ngClass]="{ 'tab-btn-active': tabView == view.PREVIEW }"
+          (click)="embedNewProjectWithPreview()"
+        >
+          Preview
+        </button>
+        <button
+          class="tab-btn"
+          [ngClass]="{ 'tab-btn-active': tabView == view.ADMINPANEL }"
+          (click)="embedNewProjectWithAdmin()"
+        >
+          AdminPanel
+        </button>
+        <button class="open" (click)="sidenav.open()">
+          <img src="./../../../assets/icons/icons8-open.svg" />
+        </button>
+      </header>
+      <div
+        [ngClass]="{
+          hidden: !(tabView === view.PREVIEW || tabView === view.EDITOR)
+        }"
+      >
+        <div id="myDiv"></div>
+      </div>
+
+      <div [ngClass]="{ hidden: !(tabView === view.ADMINPANEL) }">
+        <iframe *ngIf="iframeUrl" [src]="iframeUrl | safe"></iframe>
+      </div>
+    </main>
+  </mat-sidenav-content>
+  <div class="header">
+    <h1 class="title">deskbird</h1>
+    <div class="toggle" (click)="sidenav.toggle()">
+      <mat-icon>chevron_left</mat-icon>
+    </div>
+  </div>
+  <mat-sidenav #sidenav opened mode="side" position="end">
+    <div class="instruction">
+      <header>
+        <img (click)="sidenav.toggle()" src="../../../assets/icons/close.svg" />
+
+        <h2>Instruction</h2>
+      </header>
+      <div>
+        <div class="content">
+          <div [ngSwitch]="tab">
+            <first-workflow
+              [userId]="userId"
+              [gameId]="gameId"
+              [appId]="appId"
+              *ngSwitchCase="1"
+              (onNext)="onnext($event)"
+            ></first-workflow>
+            <second-workflow
+              *ngSwitchCase="2"
+              (onNext)="onnext($event)"
+            ></second-workflow>
+            <third-workflow
+              *ngSwitchCase="3"
+              (onNext)="onnext($event)"
+            ></third-workflow>
+            <fourth-workflow
+              *ngSwitchCase="4"
+              (onNext)="onnext($event)"
+            ></fourth-workflow>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>

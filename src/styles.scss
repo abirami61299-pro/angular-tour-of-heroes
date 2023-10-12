@@ -17,4 +17,10 @@ body {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.5px;
   line-height: 1.5em;
+  margin: 0;
+}
+mat-expansion-panel,
+mat-panel-title {
+  color: white !important;
+  font-weight: 500;
 }

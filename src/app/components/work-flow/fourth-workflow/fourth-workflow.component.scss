@@ -1,0 +1,40 @@
+mat-expansion-panel {
+  background-color: #4e586d;
+
+  padding: 1em;
+  .content {
+    margin: 0.7em;
+    font-size: 0.7em;
+  }
+
+  mat-expansion-panel-header {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+.btn {
+  background-color: #313d53;
+  width: 100%;
+  position: fixed;
+  bottom: 0em;
+  padding: 0.7em;
+
+  display: flex;
+  gap: 20%;
+  margin: 0;
+  button {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 0.7em;
+  }
+}
+mat-accordion {
+  padding: 0.5em;
+}
+.scrn-shots {
+  padding: 0.5em 0.5em;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

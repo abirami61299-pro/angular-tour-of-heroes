@@ -1,7 +1,27 @@
 <div>
-  <mat-accordion class="example-headers-align" multi> </mat-accordion>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>1. Paste The New Game Action </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <!-- <img src="../../../../assets/game-action-creation.png" /> -->
+        <div class="content">
+          Paste the newly created Game action in the highlighted line
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>2. Go To preview </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <div class="content">Click Next</div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
   <div class="btn">
     <button class="back" mat-button (click)="onnext(2)">Back</button>
-    <button class="next" mat-button (click)="onnext(1)">Completed</button>
+    <button class="next" mat-button (click)="onnext(4)">Next</button>
   </div>
 </div>

@@ -1,0 +1,28 @@
+<div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>1. Inspect the Rating </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <img src="../../../../assets/rate1.png" />
+        <div class="content">Click My Trips</div>
+        <img src="../../../../assets/rate2.png" />
+        <div class="content">Rate and Submit the reviews</div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>2. Inspect The leaderboard </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="scrn-shots">
+        <img src="../../../../assets/leaderboard-menu.png" />
+        <div class="content">Check out your score on your leaderboard</div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div class="btn">
+    <button class="back" mat-button (click)="onnext(3)">Back</button>
+    <button class="next" mat-button (click)="onnext(1)">Completed</button>
+  </div>
+</div>

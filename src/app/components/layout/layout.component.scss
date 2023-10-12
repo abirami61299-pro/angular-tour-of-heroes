@@ -1,0 +1,104 @@
+#myDiv iframe {
+  width: 100%;
+}
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+mat-sidenav-content {
+  overflow-x: scroll;
+
+  .hidden {
+    display: none;
+  }
+}
+mat-sidenav {
+  width: 30%;
+  background-color: #3b4558;
+  .instruction {
+    color: white;
+
+    header {
+      background-color: #313d53;
+      padding: 1em 0.5em;
+      display: flex;
+      gap: 1em;
+      img {
+        // content: url("../assets/icons/close.svg");
+        cursor: pointer;
+      }
+      h2 {
+        margin: 0;
+      }
+    }
+    .content {
+      font-size: x-large;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+    }
+    .btn {
+      background-color: #313d53;
+      width: 100%;
+      position: fixed;
+      bottom: 0em;
+      padding: 0.7em;
+
+      padding-left: 25%;
+      margin: 0;
+      button {
+        background-color: blueviolet;
+        color: white;
+        border-radius: 0.7em;
+      }
+    }
+  }
+  &:not(.mat-drawer-opened) {
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    min-width: 100px;
+    overflow: hidden;
+  }
+}
+.mat-sidenav-transition .mat-sidenav {
+  /* custom animation to grow and shrink width */
+  -webkit-transition: width 0.3s !important; /* For Safari 3.1 to 6.0 */
+  transition: width 0.3s !important;
+}
+.open {
+  cursor: pointer;
+  margin-left: auto;
+  background-color: #1c2639;
+  border: none;
+  outline: none;
+
+  img {
+    width: 1.5em;
+    height: 1.5em;
+    margin: auto 0;
+  }
+}
+.tabs {
+  display: flex;
+}
+.tab-btn {
+  border: none;
+  border-right: 1px solid gray;
+  cursor: pointer;
+  padding: 1.5em 0;
+  outline: none;
+  width: 15%;
+  background-color: #1c2639;
+  color: white;
+}
+.tab-btn-active {
+  // border-bottom: 2px solid hsl(0, 94%, 66%);
+  font-weight: bold;
+  background-color: #3d4556;
+}
+header {
+  background-color: #252f42;
+}

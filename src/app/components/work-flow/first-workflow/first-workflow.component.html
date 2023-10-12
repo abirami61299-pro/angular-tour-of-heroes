@@ -11,10 +11,15 @@
         <div #container class="cpy-btn">
           <button
             ngxClipboard
-            [cbContent]="content | json"
+            [cbContent]="stringified"
             [container]="container"
+            (click)="animate()"
           >
-            <img src="./../../../../assets/copy.png" alt="copy" />
+            <img
+              src="./../../../../assets/copy.png"
+              alt="copy"
+              [@zoomIn]="isCopied"
+            />
           </button>
         </div>
         <div class="code-snippet">
