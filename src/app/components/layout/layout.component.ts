@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  githubProjectName = 'PRO-INDIA/pro-gamification-sandbox/tree/stage';
+  githubProjectName =
+    'https://github.com/abirami61299-pro/my-test-app1/tree/master';
   vm: VM | null = null;
   isOpen = 0;
   files: any;
